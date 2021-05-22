@@ -5,8 +5,9 @@ import axios from 'axios';
     https://api.github.com/users/<your name>
 */
 
-axios.get(https://api.github.com/users/winterbloomingrose);
+let userName = "winterbloomingrose";
 
+axios.get(www.api.github.com/users/winterbloomingrose);
 /*
   STEP 2: Inspect and study the data coming back, this is YOUR
     github info! You will need to understand the structure of this
@@ -40,28 +41,35 @@ axios.get(https://api.github.com/users/winterbloomingrose);
   const userImg = document.createElement('img')
   const infoDiv = document.createElement('div')
   const nameHead = document.createElement('h3')
-  const usernamePee = document.createElement('p')
 
   // turn this into forEach create p array //
   let userInformation = [ 
+    {"username": myProfiledata.username},
     {"location":  myProfiledata.location},
     {"profile": myProfiledata.html_url},
     {"followers": myProfiledata.followers},
     {"following": myProfiledata.following},
     {"bio": myProfiledata.bio},
   ]
-  document.createElement('p'); //location//
-  document.createElement('p') //profile//
-  document.createElement('a') //link//
-  document.createElement('p') //followers//
-  document.createElement('p') //following//
-  document.createElement('p') //bio//
+
+  // appending //
+  cardDiv.appendChild(userImg);
+  cardDiv.appendChild(infoDiv);
+  cardDiv.appendChild(nameHead);
+  cardDiv.appendChild(username);
+
+  function profileStats(array){
+    array.forEach(element => {
+      cardDiv.appendChild(element);
+    });
+   } 
+  
 
 // addingclasses //
-cardDiv.classList.add('card');
-infoDiv.classList.add('card-info');
-nameHead.classList.add('name');
-usernamePee.classList.add('username');
+  cardDiv.classList.add('card');
+  infoDiv.classList.add('card-info');
+  nameHead.classList.add('name');
+  usernamePee.classList.add('username');
 
 userImg.setAttribute('src',myProfiledata.avatar_url)
 
